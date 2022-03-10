@@ -55,16 +55,51 @@ const drivers = students.filter((studObj) => studObj.hasCar === true);
 console.table(drivers);
 
 // 1.1 atrinkti i nauja masyva studentus kurie turi masina su forEach
+const driverEach = [];
+students.forEach((studObj) => {
+  if (studObj.hasCar === true) {
+    driverEach.push(studObj);
+  }
+});
+console.table(driverEach, ['name', 'hasCar']);
 
 // 2. Atrinkti i nauja masyva zmones is Vilniaus
+const vilnieciai = students.filter((studObj) => studObj.town === 'Vilnius');
+console.group('vilnieciai');
+console.table(vilnieciai);
+console.groupEnd();
 
 // 3. Atrinkti i nauja masyva moteris
 
 // 4. suzinoti ar yra nors vienas zmogus is Kauno
+const arYraIsKauno = students.some((studObj) => studObj.town === 'Kaunas');
+console.log('arYraIsKauno ===', arYraIsKauno);
+const arAmziusYraSkaiciusVisur = students.every((studObj) => typeof studObj.age === 'number');
+console.log('arAmziusYraSkaiciusVisur ===', arAmziusYraSkaiciusVisur);
 
 // 5. suskaiciuoti kiek zmoniu yra jaunesni nei 26
+// let jaunesniNei26 = 0;
+// students.forEach((studObj) => {
+//   if (studObj.age < 26) {
+//     jaunesniNei26++;
+//   }
+// });
+const jaunesniNei26 = students.filter((studObj) => studObj.age < 26).length;
+console.log('jaunesniNei26 ===', jaunesniNei26);
+
+// 6.0 Grazinti nauja masyva kuriame yra visu zmoniu amziai;
+let ages = students.map((studObj) => studObj.age);
+console.log('ages ===', ages);
 
 // 6. Grazinti nauja masyva kurio objektuose butu tik vardas ir miestas
+const nameAndTownArray = students.map((studObj) => {
+  const newObj = {
+    vardas: studObj.name,
+    miestas: studObj.town,
+  };
+  return newObj;
+});
+console.log('nameAndTownArray ===', nameAndTownArray);
 
 // 7. sugeneruoti rikiuoto saraso pavidalu htmle visu zmoniu vardus ir kiek jiems metu
 
