@@ -10,8 +10,8 @@ console.log({ x }, { xCopy });
 const numbers = [1, 2, 3];
 const numbers2 = [1, 2, 3];
 //       x0845     x0845
-let numbersCopy = numbers;
-
+// let numbersCopy = numbers;
+// masyvo kopija (sekli)
 let numbersCopy = numbers.slice();
 console.log(numbersCopy === numbers);
 console.log('numbers2 === numbers', numbers2 === numbers);
