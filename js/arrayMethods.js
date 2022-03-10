@@ -103,7 +103,7 @@ console.log('nameAndTownArray ===', nameAndTownArray);
 
 // 7. sugeneruoti rikiuoto saraso pavidalu htmle visu zmoniu vardus ir kiek jiems metu
 
-// 8. Gauti visu zmoniu metu suma
+// 8. Gauti visu zmoniu metu suma .reduce
 
 // 9. suskaiciuoti visu zmoniu metu vidurki
 
