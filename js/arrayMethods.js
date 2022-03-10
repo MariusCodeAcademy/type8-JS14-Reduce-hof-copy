@@ -104,7 +104,30 @@ console.log('nameAndTownArray ===', nameAndTownArray);
 // 7. sugeneruoti rikiuoto saraso pavidalu htmle visu zmoniu vardus ir kiek jiems metu
 
 // 8. Gauti visu zmoniu metu suma .reduce
+const totalStudAge = students.reduce((total, studObj) => total + studObj.age, 0);
+console.log('totalStudAge ===', totalStudAge);
 
 // 9. suskaiciuoti visu zmoniu metu vidurki
+const totalStudAgeAvg = students.reduce((total, studObj) => total + studObj.age / students.length, 0);
+console.log('totalStudAgeAvg ===', totalStudAgeAvg.toFixed(2));
 
 // 10. surasti zmongu vardu 'Mike' ir padaryti kad jis nusipirko masina yra tiesa
+const mikeFound = students.find((studObj) => studObj.name === 'Mike');
+console.log('mikeFound ===', mikeFound);
+mikeFound.hasCar = true;
+console.log('students ===', students);
+
+// 7. sugeneruoti rikiuoto saraso pavidalu htmle visu zmoniu vardus ir kiek jiems metu
+function generateList() {
+  const olEl = document.createElement('ol');
+  students.forEach((studObj) => {
+    const liEl = document.createElement('li');
+    liEl.textContent = `${studObj.name} age is ${studObj.age}`;
+    olEl.append(liEl);
+  });
+  document.body.append(olEl);
+}
+generateList();
+
+// salia el teksto li viduje sukuriam mygtuka su tekxu X
+// paspaudus mygtuka trinam ta el
